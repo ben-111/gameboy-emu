@@ -1,0 +1,74 @@
+GameBoy variants:
+DMG - Original GameBoy
+SGB - Super GameBoy
+CGB - Color GameBoy
+Pocket GameBoy
+GBA - GameBoy Advanced
+
+Memory Map:
+
+$0000 - $00FF: Boot ROM
+$0000 - $0038: RST vectors
+$0040 - $0058: Interrupt vectors
+$0000 - $3FFF: From cartridge, usually a fixed bank
+$4000 - $7FFF: From cartridge, switchable bank (if any)
+$8000 - $9FFF: VRAM (Video RAM)
+$A000 - $BFFF: External RAM in cartridge, switchable bank if any
+$C000 - $DFFF: WRAM (Work RAM)
+$E000 - $FDFF: Echo RAM of $CF000 - $DDFF, shouldn't really be used
+$FE00 - $FE9F: OAM - Object Attribute Memory, basically sprite attribute table
+$FEA0 - $FEFF: Not usable
+$FF00 - $FF7F: I/O registers:
+	$FF00: Port P1 - Joypad
+	$FF01: SB - Serial data register
+	$FF02: SC - Serial control register
+	$FF03: ---
+	$FF04: DIV - Divider register
+	$FF05: TIMA - Timer counter register
+	$FF06: TMA - Timer Modulo register
+	$FF07: TAC - Timer Control register
+	$FF08 - $FF0E: ---
+	$FF0F: IF - Interrupts Flag register
+	$FF10 - $FF14: NR10 - NR14, Sound channel 1 registers
+	$FF15: ---
+	$FF16 - $FF19: NR21 - NR24, Sound channel 2 registers
+	$FF1A - $FF1E: NR30 - NR34, Sound channel 2 registers
+	$FF1F: ---
+	$FF20 - $FF23: NR41 - NR44, Sound channel 4 registers
+	$FF24 - $FF26: NR50 - NR52, Sound channel 5 registers
+	$FF27 - $FF2F: --
+	$FF30 - $FF3F: WAV00 - WAV15, Sound wave samples
+	$FF40: LCDC - LCD control register
+	$FF41: STAT - LCD status register
+	$FF42: SCY - Vertical scroll register
+	$FF43: SCX - Horizontal scroll register
+	$FF44: LY - Scanline register
+	$FF45: LYC - Scanline compare register
+	$FF46: DMA - OAM DMA control register
+	$FF47: BGP - Background Palette data register
+	$FF48: OBP0 - Object Palette 0 data register
+	$FF49: OBP1 - Object Palette 1 data register
+	$FF4A: WY - Window Y position
+	$FF4B: WX - Window X position
+	$FF4C: ????
+	$FF4D: KEY1 - CGB only
+	$FF4E: ---
+	$FF4F: VBK - CGB only
+	$FF50: BOOT - Disables mapping of the boot ROM
+	$FF51 - $FF55: HDMA1 - HDMA5, CGB only
+	$FF56: RP - CGB only
+	$FF57 - $FF67: ---
+	$FF68: BCPS - CGB only
+	$FF69: BCPD - CGB only
+	$FF6A: OCPS - CGB only
+	$FF6B: OCPD - CGB only
+	$FF6C: OPRI - CGB only
+	$FF6D - $FF6F: ---
+	$FF70: SVBK - CGB only
+	$FF71: ---
+	$FF72 - $FF75: Undocumented
+	$FF76: PCM12 - Undocumented read only PCM amplitudes of channels 1 & 2 
+	$FF77: PCM34 - Undocumented read only PCM amplitudes of channels 3 & 4
+	$FF78 - $FF7F: ---
+$FF80 - $FFFE: HRAM (High RAM)
+$FFFF: IE - Interrupts Enable register
